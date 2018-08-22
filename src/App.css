@@ -1,28 +1,46 @@
-.App {
-  text-align: center;
+/*-----CSS Variables----*/
+/*--Basic color scheme--*/
+:root {
+  --dark-primary-color: #022140;
+  --default-primary-color: #265077;
+  --light-primary-color: #C5CAE9;
+  --text-primary-color: #FFFFFF;
+  --accent-color: #51a7f8;
+  --primary-bg-color: #FFFFFF;
+  --primary-text-color: #595959;
+  --emphasis-text-color: #212121;
+  --secondary-text-color: #1E4258;
+  --divider-color: var(--dark-primary-color);
+  --overlay-bg-color: #1E4258;
+  --overlay-text-color: #ccc;
+  --container-bg-color: #FCFCFC;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 1.5;
+  vertical-align: baseline;
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+body {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
 }
 
-.App-title {
-  font-size: 1.5em;
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 991px;
+  margin: 0 auto;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+#editor {
+  margin: 0 auto;
+  background: var(--light-primary-color);
+  resize: vertical; 
+  border-top: 2.5rem solid var(--default-primary-color);
 }
