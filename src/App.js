@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import './App.css'
 import marked from 'marked'
 
+//Carriage returns are rendered as <br>
 marked.setOptions({
   breaks: true
 }) 
 
+//Rendered hyperlinks open up in new tab/page
 const renderer = new marked.Renderer();
 renderer.link = (href, title, text) => `<a target="_blank" href="${href}" title="${title}">${text}</a>`;
 
