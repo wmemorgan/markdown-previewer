@@ -4,7 +4,7 @@ import marked from 'marked'
 
 class App extends Component {
   state = { content: ''}
-  
+
   componentDidMount() {
     const defaultContent = require("./default.md");
 
@@ -29,17 +29,19 @@ class App extends Component {
       <div className="container">
         <div className="markdown-editor sub-container">
           <label htmlFor="editor" className="label">Editor</label>
-          <textarea
-            id="editor"
-            className="textarea"
-            value={this.state.content}
-            onChange={this.updateContent}>
-          </textarea>
+            <form>
+              <textarea
+                rows="80"
+                id="editor"
+                className="textarea"
+                value={this.state.content}
+                onChange={this.updateContent}>
+              </textarea>
+            </form>
         </div>
-        <div id="preview" className="markdown-previewer sub-container">
+        <div className="markdown-previewer sub-container">
           <label htmlFor="preview" className="label">Previewer</label>
-          <div dangerouslySetInnerHTML={{__html:marked(content)}}>
-
+          <div id="preview" dangerouslySetInnerHTML={{__html:marked(content)}}>
           </div>
         </div>
       </div>
