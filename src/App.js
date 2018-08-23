@@ -2,6 +2,13 @@ import React, { Component } from 'react'
 import './App.css'
 import marked from 'marked'
 
+marked.setOptions({
+  breaks: true
+}) 
+
+const renderer = new marked.Renderer();
+renderer.link = (href, title, text) => `<a target="_blank" href="${href}" title="${title}">${text}</a>`;
+
 class App extends Component {
   state = { content: ''}
 
@@ -41,7 +48,7 @@ class App extends Component {
         </div>
         <div className="markdown-previewer sub-container">
           <label htmlFor="preview" className="label">Previewer</label>
-          <div id="preview" dangerouslySetInnerHTML={{__html:marked(content)}}>
+          <div id="preview" dangerouslySetInnerHTML={{ __html: marked(content, { renderer: renderer })}}>
           </div>
         </div>
       </div>
