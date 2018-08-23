@@ -2,12 +2,10 @@ import React, { Component } from 'react'
 import './App.css'
 import marked from 'marked'
 
-
-
 class App extends Component {
-  state = { content: 'This is the content editor' }
-
-  componentWillMount() {
+  state = { content: ''}
+  
+  componentDidMount() {
     const defaultContent = require("./default.md");
 
     fetch(defaultContent)
